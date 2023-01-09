@@ -1,5 +1,8 @@
 # cse210-student-template
-This is the starter code for Ian Searle
+My name is Ian J. Searle. I am a BYU-Idaho student studying Electrical Enginerring.
+This is my folder for my CSE 210 Homework/
+
+This is the starter code for Ian Searle.
 
 This repository contains the starter code for many different projects. They are arranged as follows:
 
