@@ -39,14 +39,16 @@ class Program
     }
     static void Main(string[] args)
     {
-        DisplayWelcome();
+        // Variables
         string userName;
         int favNumber;
         int numberSqrd;
+        // Functions
+        
+        DisplayWelcome();
         userName = PromptUserName();
         favNumber = PromptUserNumer();
         numberSqrd = SquareNumber(favNumber);
         DisplayResult(userName, numberSqrd);
-
     }
 }
