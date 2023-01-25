@@ -8,7 +8,7 @@ public class Job
 
     public void Display()
     {
-        Console.Write($"Job Title {_jobTitle} ({_companyName}) Start Year:{_startYear} End Year:{_endYear}");
+        Console.WriteLine($"Job Title {_jobTitle} ({_companyName}) Start Year:{_startYear} End Year:{_endYear}");
     }
 }
 

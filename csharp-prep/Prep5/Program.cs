@@ -23,8 +23,6 @@ class Program
         temp = Console.ReadLine();
         number = int.Parse(temp);
         return number;
-
-        
     }
 
     static int SquareNumber(int number)
@@ -37,6 +35,7 @@ class Program
     {
         Console.WriteLine($"Your name is {userName}. Your favorite number squared is {numberSqrd}.");
     }
+    
     static void Main(string[] args)
     {
         // Variables
@@ -50,5 +49,7 @@ class Program
         favNumber = PromptUserNumer();
         numberSqrd = SquareNumber(favNumber);
         DisplayResult(userName, numberSqrd);
+
     }
+
 }

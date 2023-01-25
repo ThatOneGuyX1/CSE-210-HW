@@ -41,10 +41,9 @@ class Program
         job2.Display();
 
         Resume resume1 = new Resume();
-        resume1._jobs[0]._jobTitle;
         Console.Write("Enter Name: ");
         resume1._name = Console.ReadLine();
-        resume1._myjobs.Add(job1)
+        resume1._jobs.Add(job1);
 
         resume1.Display();
 
