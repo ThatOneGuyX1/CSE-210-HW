@@ -4,7 +4,7 @@ class Program
 {
     static void Main(string[] args)
     {
-
+        // Inates the menu and key variables
         int menuTarget  = 100;
         Menu menu1 = new Menu();
 
@@ -13,7 +13,7 @@ class Program
 
         Journal myJournal = new Journal();
         myJournal.LoadFile();
-
+    
         while (menuTarget != 0)
         {
             
@@ -22,16 +22,19 @@ class Program
 
             if (menuTarget == 1)
             {
-            Random random = new Random();
-            Entry entry = new Entry();
-            int randomIndex = random.Next(promptList._prompts.Count);
-            entry._givenPrompt =$"The Prompt: {promptList._prompts[randomIndex]}";
-            DateTime theCurrentTime = DateTime.Now;
+                // Gets the date, a prompt, and user input and stores to an entry which is saved to a list
+                Random random = new Random();
+                Entry entry = new Entry();
+                int randomIndex = random.Next(promptList._prompts.Count);
+                entry._givenPrompt =$"The Prompt: {promptList._prompts[randomIndex]}";
 
-            entry._dateOfEntry = $"The Date: {theCurrentTime.ToShortDateString()}";
-            Console.WriteLine($"{entry._givenPrompt}");
-            entry._entryString = $"Dear Diary: {Console.ReadLine()}";
-            myJournal._journal.Add(entry);
+                DateTime theCurrentTime = DateTime.Now;
+                entry._dateOfEntry = $"The Date: {theCurrentTime.ToShortDateString()}";
+
+                Console.WriteLine($"{entry._givenPrompt}");
+                entry._entryString = $"Dear Diary: {Console.ReadLine()}";
+
+                myJournal._journal.Add(entry);
             }
 
             else if (menuTarget == 2)
@@ -48,9 +51,5 @@ class Program
 
         myJournal.SaveFile();
         promptList.saveFile();
-    
-    
-    
-    
     }
 }
