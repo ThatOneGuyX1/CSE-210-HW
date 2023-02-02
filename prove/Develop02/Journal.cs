@@ -20,14 +20,14 @@ public class Journal
     {
         string fileName = "myJournal.txt";
 
-        using (StreamWriter outputFile = new StreamWriter(fileName,append:true))
+        using (StreamWriter outputFile = new StreamWriter(fileName))
         {
             // You can add text to the file with the WriteLine method
             foreach (Entry selected in _journal)
             {
-                outputFile.WriteLine($"The Date: {selected._dateOfEntry}");
-                outputFile.WriteLine($"The Prompt: {selected._givenPrompt}");
-                outputFile.WriteLine($"Dear Diary: {selected._entryString}");
+                outputFile.WriteLine(selected._dateOfEntry);
+                outputFile.WriteLine(selected._givenPrompt);
+                outputFile.WriteLine(selected._entryString);
                 outputFile.WriteLine();
 
             }
@@ -38,21 +38,46 @@ public class Journal
     public void LoadFile()
     {
         _journal.Clear();
-        string filename = "myFile.txt";
+        string filename = "myJournal.txt";
         string[] lines = System.IO.File.ReadAllLines(filename);
+        int lineCount = 0;
+        int i ;
+        Entry entry = new Entry();
+        while(lineCount < lines.Length)
+        {
+            
 
-        foreach (string line in lines)
-        { 
-            string[] parts = line.Split(",");
-            string dateTemp = parts[0];
-            string entryTemp= parts[1];
+            for ( i = 0; i < 3; i++)
+            {
+                if (i ==0)
+                {
+                    entry._dateOfEntry = lines[lineCount];
+                    lineCount +=1;
+                }
 
-            Entry entry = new Entry();
-            entry._dateOfEntry = dateTemp;
-            entry._entryString = entryTemp;
+                else if (i ==1)
+                {
+                    entry._givenPrompt = lines[lineCount];      
+                    lineCount +=1;
+                }
+
+                else if (i == 2)
+                {
+                    entry._entryString =lines[lineCount];
+                    lineCount +=2;
+                }
+
+                else
+                {
+                    lineCount +=1;
+                }
+                
+
+            }
+        }
 
             _journal.Add(entry);
-        }
+            i = 0;
+            entry = new Entry();
     }
-
-}
+}   

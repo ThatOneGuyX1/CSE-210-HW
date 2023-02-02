@@ -5,16 +5,15 @@ class Program
     static void Main(string[] args)
     {
 
-    List<string> prompts = new List<string>
-    {
-        "How was your day?",
-        "What was the weirdest part of your day",
-        "Did you kiss a girl?",
-
-    };
         int menuTarget  = 100;
         Menu menu1 = new Menu();
+
+        Prompt promptList = new Prompt();
+        promptList.LoadFile();
+
         Journal myJournal = new Journal();
+        myJournal.LoadFile();
+
         while (menuTarget != 0)
         {
             
@@ -25,26 +24,30 @@ class Program
             {
             Random random = new Random();
             Entry entry = new Entry();
-            int randomIndex = random.Next(prompts.Count);
-            entry._givenPrompt =prompts[randomIndex];
+            int randomIndex = random.Next(promptList._prompts.Count);
+            entry._givenPrompt =$"The Prompt: {promptList._prompts[randomIndex]}";
             DateTime theCurrentTime = DateTime.Now;
-            entry._dateOfEntry = theCurrentTime.ToShortDateString();
-            Console.WriteLine($"Prompt: {entry._givenPrompt}");
-            entry._entryString = Console.ReadLine();
+
+            entry._dateOfEntry = $"The Date: {theCurrentTime.ToShortDateString()}";
+            Console.WriteLine($"{entry._givenPrompt}");
+            entry._entryString = $"Dear Diary: {Console.ReadLine()}";
             myJournal._journal.Add(entry);
             }
-
 
             else if (menuTarget == 2)
             {
                 myJournal.Display();
             }
 
-            
-
+            else if (menuTarget == 3)
+            {
+                promptList.addPrompt();
+            }
+    
         }
 
         myJournal.SaveFile();
+        promptList.saveFile();
     
     
     
