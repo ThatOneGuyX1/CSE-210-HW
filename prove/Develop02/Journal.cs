@@ -29,7 +29,6 @@ public class Journal
                 outputFile.WriteLine(selected._givenPrompt);
                 outputFile.WriteLine(selected._entryString);
                 outputFile.WriteLine();
-
             }
     
         }
@@ -45,8 +44,6 @@ public class Journal
         Entry entry = new Entry();
         while(lineCount < lines.Length)
         {
-            
-
             for ( i = 0; i < 3; i++)
             {
                 if (i ==0)
