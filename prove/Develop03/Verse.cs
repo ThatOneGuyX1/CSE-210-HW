@@ -43,14 +43,12 @@ public class Verse
         }
         Console.WriteLine();
     }
-
     public void SetVerse(string verseText)
     {
         string[] split = verseText.Split(" ");
         foreach (string x in split)
         {
-            Word temp = new Word();
-            temp.getWord(x);
+            Word temp = new Word(x);
             _verseText.Add(temp);
         }
     }

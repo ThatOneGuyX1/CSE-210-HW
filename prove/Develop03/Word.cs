@@ -23,7 +23,7 @@ public class Word
             return false;
         }
     }
-    public void getWord(string x)
+    public Word(string x)
     {
         _word = x;
         _visiblity = true;
