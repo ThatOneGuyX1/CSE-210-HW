@@ -2,9 +2,7 @@ using System;
 
 public class Verse
 {
-    private List<Word> _verseText = new List<Word>();
-
-    
+    private List<Word> _verseText = new List<Word>(); 
     public void HideWord()
     {
         int x = 0;
