@@ -32,21 +32,21 @@ public class Scripture
     public void AskScripture()
     {
 
-        _targetRefernce.getBook();
+        _targetRefernce.setBook();
 
-        _targetRefernce.getChapter();
+        _targetRefernce.setChapter();
 
-        _targetRefernce.getVerse();
+        _targetRefernce.setVerse();
 
         
     }
     public void SetScripture()
     {
         int count = 0;
-        int max = _targetRefernce._targetEndVerse - _targetRefernce._targetStartVerse + 1;
+        int max = _targetRefernce.getEndVerse() - _targetRefernce.getStartVerse()+ 1;
         foreach (var key in _master.Keys)
         {
-            string targetKey = $"{_targetRefernce._targetBook} {_targetRefernce._targetChapter}:{_targetRefernce._targetStartVerse + count}";
+            string targetKey = $"{_targetRefernce.getBook()} {_targetRefernce.getChapter()}:{_targetRefernce.getStartVerse() + count}";
             if (key == targetKey)
             {
                 Verse temp = new Verse();

@@ -2,28 +2,28 @@ using System;
 
 public class Reference
 {
-    public string _targetBook;
+    private string _targetBook;
 
-    public string _targetChapter;
+    private string _targetChapter;
 
-    public int _targetStartVerse;
+    private int _targetStartVerse;
 
-    public int _targetEndVerse;
+    private int _targetEndVerse;
 
     
-    public void getBook()
+    public void setBook()
     {
         Console.Write("Please enter what book you want: ");
         _targetBook = Console.ReadLine();
     }
 
-    public void getChapter()
+    public void setChapter()
     {
         Console.Write("Please enter what chapter you want: ");
         _targetChapter = Console.ReadLine();
     }
 
-    public void getVerse()
+    public void setVerse()
     {
         Console.Write("Please Enter what verse(s) you want (for single verses use format 3-3):");
         string verse = Console.ReadLine();
@@ -33,4 +33,29 @@ public class Reference
         
         
     }
+
+    public string getBook()
+    {
+        return _targetBook;
+    }
+
+    public string getChapter()
+    {
+        return _targetChapter;
+    }
+
+    public int getStartVerse()
+    {
+        return _targetStartVerse;
+    }
+
+    public int getEndVerse()
+    {
+        return _targetEndVerse;
+    }
+
+
+
+
+
 }

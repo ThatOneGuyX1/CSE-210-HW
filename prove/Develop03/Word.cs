@@ -6,6 +6,12 @@ public class Word
 
     private string _word;
 
+    public Word(string x)
+    {
+        _word = x;
+        _visiblity = true;
+    }
+
     public void SetVisiblity(bool x)
     {
         _visiblity = x;
@@ -23,11 +29,7 @@ public class Word
             return false;
         }
     }
-    public Word(string x)
-    {
-        _word = x;
-        _visiblity = true;
-    }
+  
 
     public void showWord()
     {
