@@ -6,6 +6,7 @@ public class Reflect : Activity
     List<string> _prompts = new List<string>();
     List<string> _questions = new List<string>();
 
+   
     private void SetPrompts()
     {
         _prompts.Add("Think of a time when you stood up for someone else.");
@@ -15,6 +16,12 @@ public class Reflect : Activity
        
     }
 
+    public override void GetDuration()
+    {
+        Console.WriteLine("How long should the activity last in minutes?");
+        int minutesToSeconds = int.Parse(Console.ReadLine()) * 60;
+        SetDuration(minutesToSeconds);
+    }
     private void SetQuestions()
     {
         _questions.Add("Why was this experience meaningful to you?");
@@ -46,16 +53,13 @@ public class Reflect : Activity
         return _questions[random.Next(0,_questions.Count())];
     }
 
-
-
     public void RunReflect()
     {   
-        int step = 10;
+        int step = 15;
         Animation ani = new Animation(step);
-        runWelcome();
         SetPrompts();
         SetQuestions();
-        Console.ReadLine();
+        runWelcome();
         Console.WriteLine(GetPrompt());
         while (_timePassed < _duration)
         {

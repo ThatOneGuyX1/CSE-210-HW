@@ -9,28 +9,30 @@ public class Activity
 
     private string _endMessage = "Good Job!!";
 
-    protected string _description;
+    protected string _description; // Is overridden in each child class
 
     protected int _timePassed = 0;
 
+    // Constructs the activity
     public Activity()
     {
         GetDuration();
     }
 
-    public void GetDuration()
+    // Takes user input to set the duration
+    public virtual void GetDuration()
     {
         Console.WriteLine("How long should the activity last in seconds?");
         SetDuration(int.Parse(Console.ReadLine()));
     }
 
-    private void SetDuration (int time)
+    protected void SetDuration (int time)
     {
         _duration = time;
         Console.WriteLine($"Time set is {_duration} seconds.");
     }
 
-    protected void DisplayWelcomeMessage()
+    private void DisplayWelcomeMessage()
     {
         Console.WriteLine(_welcomeMessage);
     }
@@ -43,14 +45,15 @@ public class Activity
     protected void PassTime(int step)
     {
         int count = 0;
-        while(count < step)
+        while((count < step) && (_timePassed <= _duration))
         {
-            Thread.Sleep(1000);
-            Console.Write("\b \b");
-            _timePassed += 1;
+            Thread.Sleep(1000); // Waits on second
+            Console.Write("\r" + new string(' ', Console.WindowWidth) + "\r"); // Clears the line, since there are 2 digit numbers
+            _timePassed += 1; // Counts one second
             count += 1;
             Console.Write(_timePassed);
         }
+        Console.WriteLine("");
     }
 
     protected void DisplayDesription()
@@ -65,8 +68,12 @@ public class Activity
 
     protected void runWelcome()
     {
+        // Displays the welcome items for each activity.
+        Console.Clear();
         DisplayWelcomeMessage();
         DisplayDesription();
+        Console.WriteLine("Press enter to begin.");
+        Console.ReadLine();
     }
 
 }

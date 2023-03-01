@@ -22,13 +22,6 @@ public class Lister : Activity
             _prompts.Add("Who are some of your personal heroes?");
     }
 
-
-
-
-
-
-
-
     public void RunLister()
     {
         runWelcome();
@@ -51,7 +44,10 @@ public class Lister : Activity
 
     }
 
-
+    public override void SetDescription()
+    {
+       _description = "This activity will help you postive experiences and thought. You will list answers within the duration. You can see past answers in a text document.";
+    }
 
     private void SaveAnswers(string prompt)
     {
