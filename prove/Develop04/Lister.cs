@@ -2,7 +2,6 @@ using System;
 
 public class Lister : Activity
 {
-
     private List<string> _prompts = new List<string>();
 
     private List<string> _answers = new List<string>();
@@ -66,4 +65,5 @@ public class Lister : Activity
     
         }
     } 
+
 }

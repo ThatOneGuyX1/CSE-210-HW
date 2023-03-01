@@ -4,6 +4,7 @@ using System;
 public class Reflect : Activity
 {
     List<string> _prompts = new List<string>();
+
     List<string> _questions = new List<string>();
 
    
@@ -22,6 +23,7 @@ public class Reflect : Activity
         int minutesToSeconds = int.Parse(Console.ReadLine()) * 60;
         SetDuration(minutesToSeconds);
     }
+    
     private void SetQuestions()
     {
         _questions.Add("Why was this experience meaningful to you?");
@@ -63,7 +65,7 @@ public class Reflect : Activity
         Console.WriteLine(GetPrompt());
         while (_timePassed < _duration)
         {
-            ani.RunLineAnimation();
+            ani.RunAnimation();
             _timePassed += step;
             Console.WriteLine(GetQuestion());
         }

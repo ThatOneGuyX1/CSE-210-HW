@@ -3,8 +3,6 @@ using System;
 
 public class Breather : Activity
 {
-    private List<string> _prompts = new List<string>();
-
     public override void SetDescription()
     {
        _description = "This activity will help you focus on your breathing and relax your body. Follow the prompts on screen.";
