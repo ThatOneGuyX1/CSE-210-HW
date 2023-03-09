@@ -13,12 +13,11 @@ public class Activity
 
     protected int _timePassed = 0;
 
-    // Constructs the activity
+    // Constructs the activity 
     public Activity()
     {
         GetDuration();
     }
-
     // Takes user input to set the duration
     public virtual void GetDuration()
     {
