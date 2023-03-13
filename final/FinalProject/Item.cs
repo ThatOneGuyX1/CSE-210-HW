@@ -32,7 +32,7 @@ public class Item : ItemRepo
     private bool _avalability;
     private string _orderNumber;
 
-    public Item(string name, string category, string model, double price, string loc)
+    public Item(string name, string category, string model, double price, string loc, string order = "0")
     {
         SetItemName(name);
         SetCatergory(category);
@@ -40,7 +40,7 @@ public class Item : ItemRepo
         SetPurchasePrice(price);
         SetLocation(loc);
         SetAvaliblity(false);
-        setOrderNumber("0");
+        setOrderNumber(order);
     }
 
 // Constructors
