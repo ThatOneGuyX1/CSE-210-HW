@@ -11,14 +11,19 @@ using System;
 
 public class CustomerRepo
 {
+    List<Customer> _masterCustomerList = new List<Customer>();
     public void LoadRepo()
     {
 
     }
 
-
     public void SaveRepo()
     {
         
+    }
+
+        public void AddInventroy(Customer dude)
+    {
+        _masterCustomerList.Add(dude);
     }
 }

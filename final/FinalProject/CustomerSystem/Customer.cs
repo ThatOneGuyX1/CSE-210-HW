@@ -9,7 +9,7 @@ Version: 0.01
 */
 using System;
 
-public class Customer : CustomerRepo
+public class Customer
 {
     private string _accountName;
     private string _phoneNumber;

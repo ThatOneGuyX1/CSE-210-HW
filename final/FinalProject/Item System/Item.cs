@@ -12,7 +12,7 @@ Date: 3/9/23
 
 using System;
 
-public class Item : ItemRepo
+public class Item
 {
     Dictionary< int, string> _locationDict = new Dictionary<int, string>
         {
