@@ -13,13 +13,13 @@ using System;
 
 public class ItemRepo
 {
-    List<Item> _masterInventory = new List<Item>();
-    public void SaveRepo()
+    protected List<Item> _masterInventory = new List<Item>();
+    public  virtual void SaveRepo(string filename)
     {
         return;
     }
 
-    public  virtual void LoadRepo()
+    public  virtual void LoadRepo(string filename)
     {
         return;
     }

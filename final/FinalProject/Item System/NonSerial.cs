@@ -10,12 +10,11 @@ Date: 3/9/23
 */
 
 using System;
-
 public class NonSerial : Item
 {
     private int _quantity;
 
-    public NonSerial(string name, string category, string model, double price, string loc, int quan) : base(name,category,model,price,loc)
+    public NonSerial(int quan,string name, string category, string model, double price, string loc, string order = "0", bool status = false) : base(name,category,model,price,loc,order, status)
     {
         SetQuantity(quan);
     }
@@ -23,6 +22,11 @@ public class NonSerial : Item
     public void SetQuantity(int quan)
     {
         _quantity = quan;
+    }
+
+    public override string GetTypeItem()
+    {
+        return "NONSERIAL";
     }
 
 }

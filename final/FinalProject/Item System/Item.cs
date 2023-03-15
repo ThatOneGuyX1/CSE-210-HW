@@ -32,14 +32,14 @@ public class Item
     private bool _avalability;
     private string _orderNumber;
 
-    public Item(string name, string category, string model, double price, string loc, string order = "0")
+    public Item(string name, string category, string model, double price, string loc, string order = "0", bool status = false)
     {
         SetItemName(name);
         SetCatergory(category);
         setModelNumber(model);
         SetPurchasePrice(price);
         SetLocation(loc);
-        SetAvaliblity(false);
+        SetAvaliblity(status);
         setOrderNumber(order);
     }
 
@@ -99,7 +99,7 @@ public class Item
         return _itemName;
     }
 
-    public string getCatergory()
+    public string getCategory()
     {
         return _category;
     }
@@ -132,8 +132,13 @@ public class Item
         }
     }
 
-    public string getOrderNumber()
+    public string GetOrderNumber()
     {
         return _orderNumber;
+    }
+    
+    public virtual string GetTypeItem()
+    {
+        return "ERROR";
     }
 }

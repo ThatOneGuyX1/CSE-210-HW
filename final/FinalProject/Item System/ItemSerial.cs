@@ -15,7 +15,7 @@ public class ItemSerial : Item
 {
     private string _serialNumber;
 
-    public ItemSerial(string name, string category, string model, double price, string loc, string serial) : base(name,category,model,price,loc)
+    public ItemSerial(string serial, string name, string category, string model, double price, string loc, string order = "0", bool status = false): base(name,category,model,price,order, loc,status)
     {
         SetSerialNumber(serial);
     }
@@ -28,6 +28,11 @@ public class ItemSerial : Item
     public string GetSerialNumber()
     {
         return _serialNumber;
+    }
+
+    public override string GetTypeItem()
+    {
+        return "SERIAL";
     }
 
 }
