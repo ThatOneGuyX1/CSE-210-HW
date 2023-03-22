@@ -20,7 +20,7 @@ class Program
 
         
         int x = 0;
-        while( x >= 0)
+        while( x <= 90)
         {
             x = _masterOps[x].Execute();        
         }

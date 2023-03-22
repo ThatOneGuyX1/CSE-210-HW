@@ -33,26 +33,19 @@ public class CSVItemRepo: ItemRepo
                 double price =  double.Parse(values[4]); //Price
                 string loc =  values[5]; // Location
                 string order = values[6]; // Ordernumber
-                if (values[7] == "Sold")
-                {
-                    status = false;
-                }
-                else
-                {
-                    status = true;
-                }
+                status = bool.Parse(values[7]);
 
 
                 if (type.ToLower() == "serial")
                 {
-                    string serial = values[7];
+                    string serial = values[8];
                     Item temp = new ItemSerial(serial,name,category, model,price, loc, order,status);
                     AddInventroy(temp);
                 }
                 
                 else if (type.ToLower() == "nonserial")
                 {
-                    int quan = int.Parse(values[7]); 
+                    int quan = int.Parse(values[8]); 
                     Item temp = new NonSerial(quan,name,category, model,price, loc, order,status);
                     AddInventroy(temp);
                 }
@@ -69,19 +62,17 @@ public class CSVItemRepo: ItemRepo
          using(var file = new StreamWriter(filename))
         {
             file.WriteLine(_header);
-            for(int i = 0; i <= _masterInventory.Count(); i++)
+            for(int i = 0; i < _masterInventory.Count(); i++)
             {
                 Item item = _masterInventory[i];
-                file.Write($"{item.GetTypeItem()},");
-                file.Write($"{item.GetItemName()},");
-                file.Write($"{item.getCategory()},");
-                file.Write($"{item.GetModelNumber()},");
-                file.Write($"{item.GetPurchasePrice()},");
-                file.Write($"{item.GetLocation()},");
-                file.Write($"{item.GetOrderNumber()},");
-                file.Write($"{item.getAvaliblity()}");
-            }
-}
+                List <string> list= item.GetItemList();
+                foreach (string line in list)
+                {
+                    file.Write(line);
+                }
+                file.WriteLine();
+            }           
 
-}
+        }
+    }
 }

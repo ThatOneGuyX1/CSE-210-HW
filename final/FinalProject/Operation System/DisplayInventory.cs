@@ -35,7 +35,7 @@ public class DisplayInventory : Operation
             Display($"{thing.GetItemName()}");
             Display(thing.GetModelNumber ());
             Display(thing.GetOrderNumber());
-            Display(thing.getAvaliblity());
+            Display(thing.GetAvaliblity());
         }
 
         return 0;

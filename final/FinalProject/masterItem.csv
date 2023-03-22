@@ -1,2 +1,2 @@
-Type, Name, Category,Model Number, Price, Location, Order Number
-SERIAL,Bobby,Kitchen,213ewsda,2134,0: Main Store,0,
+Type, Name, Category, Model Number, Price, Location, Order, Status, Extra
+SERIAL,Cougar,Cool KAt,feline,123,Floor,0,False,123,

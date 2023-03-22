@@ -64,7 +64,7 @@ public class Item
         _purchasePrice = price;
     }
 
-    public void SetLocation(string loc )
+    public void SetLocation(string loc)
     {
         // This converts the typed location from the user into a number for easier data processing.
         // By using a dictionary we can easliy bind the number to a location.
@@ -72,7 +72,7 @@ public class Item
         {
             for (int i = 0; i <= _locationDict.Count()- 1; i++)  
             {
-                if (_locationDict[i] == loc)
+                if (_locationDict[i].ToLower() == loc.ToLower())
                 {
                     _location = i ;
                     return;
@@ -117,12 +117,14 @@ public class Item
     public string GetLocation()
     {
         
-        return $"{_location}: {_locationDict[_location]}";
+        return $"{_locationDict[_location]}";
     }
 
-    public string getAvaliblity()
+    
+
+    public string GetAvaliblity()
     {
-        if (_avalability == false)
+        if (_avalability == true)
         {
             return " SOLD";
         }
@@ -132,11 +134,30 @@ public class Item
         }
     }
 
+    public bool GetStatus()
+    {
+        return _avalability;
+    }
     public string GetOrderNumber()
     {
         return _orderNumber;
     }
-    
+
+    public virtual List<string> GetItemList()
+    {
+        List<string> list = new List<string>();
+            list.Add($"{GetTypeItem()},"); // 0
+            list.Add($"{GetItemName()},"); // 1
+            list.Add($"{getCategory()},"); // 2
+            list.Add($"{GetModelNumber()},"); // 3
+            list.Add($"{GetPurchasePrice()},"); // 4
+            list.Add($"{GetLocation()},");  // 5
+            list.Add($"{GetOrderNumber()},"); //6
+            list.Add($"{GetStatus()}"); //7
+            return list;
+
+
+    }
     public virtual string GetTypeItem()
     {
         return "ERROR";

@@ -24,9 +24,23 @@ public class NonSerial : Item
         _quantity = quan;
     }
 
+    public int GetQuantity()
+    {
+        return _quantity;
+    }
+
     public override string GetTypeItem()
     {
         return "NONSERIAL";
     }
 
+     public override List<string> GetItemList()
+    {
+        List<string> list = base.GetItemList();
+
+        list.Add($"{GetQuantity()}");
+        return list;
+        
+
+    }
 }
