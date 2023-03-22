@@ -13,8 +13,9 @@ using System;
 
 public class Operation
 {
-    public virtual void Execute()
+    public virtual int Execute()
     {
-
+        Console.WriteLine("ERROR");
+        return 0;
     }
 }
