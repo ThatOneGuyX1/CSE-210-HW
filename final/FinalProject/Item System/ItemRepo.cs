@@ -13,7 +13,9 @@ using System;
 
 public class ItemRepo
 {
+
     protected List<Item> _masterInventory = new List<Item>();
+
     public  virtual void SaveRepo(string filename)
     {
         return;
@@ -27,5 +29,10 @@ public class ItemRepo
     public void AddInventroy(Item thingie)
     {
         _masterInventory.Add(thingie);
+    }
+
+    public List<Item> GetList()
+    {
+        return _masterInventory;
     }
 }

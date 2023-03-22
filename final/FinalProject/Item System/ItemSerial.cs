@@ -15,7 +15,7 @@ public class ItemSerial : Item
 {
     private string _serialNumber;
 
-    public ItemSerial(string serial, string name, string category, string model, double price, string loc, string order = "0", bool status = false): base(name,category,model,price,order, loc,status)
+    public ItemSerial(string serial, string name, string category, string model, double price, string loc, string order = "0", bool status = false): base(name,category,model,price,loc,order,status)
     {
         SetSerialNumber(serial);
     }

@@ -64,13 +64,13 @@ public class Item
         _purchasePrice = price;
     }
 
-    public void SetLocation(string loc)
+    public void SetLocation(string loc )
     {
         // This converts the typed location from the user into a number for easier data processing.
         // By using a dictionary we can easliy bind the number to a location.
         while(true)
         {
-            for (int i = 0; i <= _locationDict.Count(); i++)  
+            for (int i = 0; i <= _locationDict.Count()- 1; i++)  
             {
                 if (_locationDict[i] == loc)
                 {
