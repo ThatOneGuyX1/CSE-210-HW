@@ -153,7 +153,7 @@ public class Item
             list.Add($"{GetPurchasePrice()},"); // 4
             list.Add($"{GetLocation()},");  // 5
             list.Add($"{GetOrderNumber()},"); //6
-            list.Add($"{GetStatus()}"); //7
+            list.Add($"{GetStatus()},"); //7
             return list;
 
 

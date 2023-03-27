@@ -37,7 +37,7 @@ public class ItemSerial : Item
     public override List<string> GetItemList()
     {
         List<string> list = base.GetItemList();
-
+        
         list.Add($"{GetSerialNumber()}");
         return list;
         
