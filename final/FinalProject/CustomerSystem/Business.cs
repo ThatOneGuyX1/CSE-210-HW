@@ -12,7 +12,7 @@ using System;
 public class Business : Customer
 {
     Dictionary <int, List<String>> _namesOnAccount = new Dictionary<int, List<string>>();
-    // 1:  < name Phone, Email>
+    // 1:  < name, Phone, Email>
     public Business (string name, string phone, string email, string address, double newBal = 0) : base(name,phone,email,address,newBal)
     {
        
@@ -28,6 +28,7 @@ public class Business : Customer
         temp = _namesOnAccount[pos];
         return temp;
     }
+    
     
 
 

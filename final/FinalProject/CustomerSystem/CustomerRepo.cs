@@ -11,19 +11,24 @@ using System;
 
 public class CustomerRepo
 {
-    List<Customer> _masterCustomerList = new List<Customer>();
-    public void LoadRepo()
+    protected List<Customer> _masterCustomerList = new List<Customer>();
+    public virtual void LoadRepo()
     {
 
     }
 
-    public void SaveRepo()
+    public virtual void SaveRepo()
     {
         
     }
 
-        public void AddInventroy(Customer dude)
+    public void AddCustomer(Customer dude)
     {
         _masterCustomerList.Add(dude);
     }
+    public List<Customer> GetList()
+    {
+        return _masterCustomerList;
+    }
+
 }

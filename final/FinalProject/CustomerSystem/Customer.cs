@@ -23,7 +23,9 @@ public class Customer
     {
         SetName(name);
         SetPhoneNumber(phone);
+        SetEmail(email);
         SetMailingAddress(address);
+        SetBalance(newBal);
         
     }
     // Setters
@@ -75,5 +77,17 @@ public class Customer
     public void AddBal(double newBal)
     {
         _balance += newBal;
+    }
+
+    public List<string> GetCustList()
+    {
+        List<string> list = new List<string>();
+        list.Add(_accountName + ",");
+        list.Add(_mailingAddress + ",");
+        list.Add(_phoneNumber + ",");
+        list.Add(_emailAddress + ",");
+        list.Add($"{_balance}");
+        return list;
+        
     }
 }

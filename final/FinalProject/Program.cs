@@ -8,7 +8,8 @@ class Program
         ItemRepo _masterItem = new CSVItemRepo();
         _masterItem.LoadRepo("masterItem.csv");
 
-        CustomerRepo _masterCustomer = new CustomerRepo();
+        CustomerRepo _masterCustomer = new CSVCustomerRepo();
+        _masterCustomer.LoadRepo();;
 
         OrderRepo _masterOrder = new OrderRepo();
 
@@ -17,6 +18,9 @@ class Program
         _masterOps.Add(1, new AddItem(_masterItem));
         _masterOps.Add(2, new RemoveItem(_masterItem)); 
         _masterOps.Add(3, new DisplayInventory(_masterItem));
+        _masterOps.Add(4, new AddCustomer(_masterCustomer));
+        _masterOps.Add(5, new AddCustomer(_masterCustomer));
+
 
         
         int x = 0;
@@ -26,5 +30,6 @@ class Program
         }
 
         _masterItem.SaveRepo("masterItem.csv");
+        _masterCustomer.SaveRepo();
     }
 }

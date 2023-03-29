@@ -17,9 +17,10 @@ public class DisplayMenu : Operation
     {
         Console.WriteLine("1. Add Item");
         Console.WriteLine("2. Remove Item");
-        Console.WriteLine("3. Add Customer");
-        Console.WriteLine("4. Remove Customer");
-        Console.WriteLine("5. Make a Sale");
+        Console.WriteLine("3. Display Inventory");
+        Console.WriteLine("4. Add Customer");
+        Console.WriteLine("5. Remove Customer");
+        Console.WriteLine("6. View Cusomters");
         int target = int.Parse(Console.ReadLine());
         return target;
     }
