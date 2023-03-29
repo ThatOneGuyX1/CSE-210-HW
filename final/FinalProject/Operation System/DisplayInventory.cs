@@ -32,11 +32,15 @@ public class DisplayInventory : Operation
     {
         foreach (Item thing in _list)
         {
-            Display($"{thing.GetItemName()}");
-            Display(thing.GetModelNumber ());
-            Display(thing.GetOrderNumber());
+            Display(thing.GetTypeItem());
+            Display(thing.GetItemName());
+            Display(thing.getCategory());
+            Display(thing.GetModelNumber());
+            Display(thing.GetLocation());
+            Display($"{thing.GetPurchasePrice()}");
             Display(thing.GetAvaliblity());
         }
+        
 
         return 0;
     }

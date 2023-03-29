@@ -14,6 +14,7 @@ using System;
 public class CSVItemRepo: ItemRepo
 {
 
+    protected List<Item> _masterCustomer = new List<Item>();
     string _header;
     public override void LoadRepo(string filename)
     {
