@@ -1,10 +1,10 @@
 /* 
 Class Name: Customer
-Parent Class: CustomerRepo
+Parent Class: ----
 Subclasses: Business, Private
 
 Purpose: Contains all information related customer accounts 
-Version: 0.01
+Version: 0.02
 
 */
 using System;
@@ -15,9 +15,9 @@ public class Customer
     private string _phoneNumber;
     private string _emailAddress;
     private string _mailingAddress;
-    private double  _balance = 0.0;
+    private double  _balance = 0.0; // Default is set to 0 since a new customer will have 0 balance.
 
-    protected int accountNumber;
+    protected int accountNumber; /// Maybe used later
 
     public Customer (string name, string phone, string email, string address, double newBal = 0)
     {
@@ -72,7 +72,7 @@ public class Customer
         return _balance;
     }
 
-    // Additonal Functins
+    // Additonal Functions
 
     public void AddBal(double newBal)
     {
@@ -81,13 +81,13 @@ public class Customer
 
     public List<string> GetCustList()
     {
+        // This is a list that is only used to be able to save the data in a CSV file.
         List<string> list = new List<string>();
         list.Add(_accountName + ",");
         list.Add(_mailingAddress + ",");
         list.Add(_phoneNumber + ",");
         list.Add(_emailAddress + ",");
         list.Add($"{_balance}");
-        return list;
-        
+        return list; 
     }
 }

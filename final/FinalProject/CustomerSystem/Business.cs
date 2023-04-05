@@ -1,11 +1,12 @@
 /* 
 Class Name: Business
 Parent Class: Customer
-Subclasses: N/A
+Subclasses: -----
 
 Purpose: Creates a sepcial type of customer where multiple names on the account 
-Version: 0.01
+Version: 0.02
 
+NOTE: Not currently being used. I need to give more thought on how to intergrate this with other functions.
 */
 using System;
 

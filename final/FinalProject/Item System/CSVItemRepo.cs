@@ -3,7 +3,8 @@ Class Name: CSVItemRepo
 Parent Class: ItemRepo
 Subclasses:
 
-Purpose: Is the base class for all Items, will have all the data needed for the loading and saving items
+Purpose: Saves and Loads the master inventory from/ to a CSV file
+            a csv file was chosen so that it could be imported and more easily manipulated in the file by a user.
 
 Version: 0.01
 
